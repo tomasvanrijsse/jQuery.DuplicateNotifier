@@ -1,11 +1,11 @@
-/* INSTALATION NOTES
+/* INSTALLATION NOTES
 Put this piece of code somewhere in your html between <html> ... </html>
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('body').duplicateNotifier();
+		$('body').duplicateNotifier(true);
 		// $( ) within this element will be searched for duplicate ids
-		// findDoubleIds( boolean) the boolean indicated wether you find an alert message(default:false) or red prompts on the spot(true)
+		// findDoubleIds( boolean) the boolean indicated wether you get alert message(default) or red prompts on the position of the duplicate ID's
 	});
 </script>
 
@@ -48,7 +48,7 @@ $.duplicateNotifier = {
 		} 
 		
 		var id = $(element).attr('id');
-		if(id!=""){
+		if(id !== undefined){
 			if(allids.hasOwnProperty(id)){
 				allids[id] = allids[id]+1;
 			} else {
